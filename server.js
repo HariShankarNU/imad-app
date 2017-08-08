@@ -5,13 +5,58 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+
+var article1={
+    title:'article1',
+    heading:'article1',
+    date:'aug4',
+    content: `  <p>
+            this is the first article..hooiogwrggsdodijvah...
+        </p>
+        <p>
+            the real content begind here are yiu reagy coz i am are yoi=u that is the question.the real content begind here are yiu reagy coz i am are yoi=u that is the question.the real content begind here are yiu reagy coz i am are yoi=u that is the question.the real content begind here are yiu reagy coz i am are yoi=u that is the question.the real content begind here are yiu reagy coz i am are yoi=u that is the question.the real content begind here are yiu reagy coz i am are yoi=u that is the question.the real content begind here are yiu reagy coz i am are yoi=u that is the question
+        </p>`
+}
+function createtemplate(data){
+  var  title=data.title;
+  var heading=data.heading;
+  var date=data.date;
+  var content=data.content;
+    
+
+var htmltemplate=`<html>
+    <head>
+        <title>${title}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link href="/ui/style.css" rel="stylesheet" />
+        
+
+    </head>
+    <body>
+      <div>
+          <a href="/">home</a>
+      </div>
+      <hr/>
+      <h1>
+          ${heading}
+        </h1>
+        <div>
+            ${date}
+        </div>
+        <div class="container">
+    ${content}
+        </div>
+    </body>
+</html>
+`}
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 
 app.get('/article1', function (req, res) {
-   res.sendFile(path.join(__dirname, 'ui', 'article1.html'));
+   res.send(createtemplate(article1));
 });
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));

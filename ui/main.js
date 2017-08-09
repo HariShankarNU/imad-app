@@ -4,6 +4,6 @@ element.innerHTML="new";
 
 var image=document.getElementById('ima');
 
-image.onClick=function(){
+image.onclick=function(){
     image.style.marginleft='100px';
 };

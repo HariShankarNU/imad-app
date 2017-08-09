@@ -1,3 +1,3 @@
 console.log('Loaded!');
-var element=document.getelementbyid('main');
-element.innerhtml="new";
+var element=document.getElementById('main');
+element.innerHTML="new";

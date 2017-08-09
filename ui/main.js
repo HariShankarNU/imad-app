@@ -5,5 +5,5 @@ element.innerHTML="new";
 var image=document.getElementById('ima');
 
 image.onClick=function(){
-    image.style.marginleft="100px";
+    image.style.marginleft='100px';
 };

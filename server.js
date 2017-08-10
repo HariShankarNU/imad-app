@@ -55,7 +55,7 @@ var htmltemplate=`<html>
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-
+var counter=0;
 
 app.get('/article1', function (req, res) {
    res.send(createtemplate(article1));

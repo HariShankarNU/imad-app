@@ -1,14 +1,18 @@
-console.log('Loaded!');
-var element=document.getElementById('main');
-element.innerHTML="new";
-
-var image=document.getElementById('ima');
-
-var left=0;
-function moveright(){
-    left=left+10;
-    image.style.marginLeft=left+'px'
+var button=getElementById("counter");
+var counter=0;
+button.onclick=function(){
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    counter=counter+1;
+    span=getElementById("count");
+    span.innerHTML=counter.toString();
+    
+    
 }
-image.onclick=function(){
-    var interval=setInterval(moveright,100);
-};
